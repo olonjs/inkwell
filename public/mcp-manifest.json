@@ -1,0 +1,165 @@
+{
+  "version": "1.0.0",
+  "kind": "olonjs-mcp-manifest-index",
+  "generatedAt": "2026-07-13T15:47:59.461Z",
+  "pages": [
+    {
+      "slug": "about",
+      "title": "About Inkwell Journal and this collections demo",
+      "description": "Inkwell Journal is a working OlonJS demo: posts and tags live as separate collections, related through keys on the post side and resolved at render time.",
+      "manifestHref": "/mcp-manifests/about.json",
+      "contractHref": "/schemas/about.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "content-block",
+        "stats-band",
+        "cta-banner"
+      ]
+    },
+    {
+      "slug": "authors",
+      "title": "Authors",
+      "description": "Author directory powered by the autori collection.",
+      "manifestHref": "/mcp-manifests/authors.json",
+      "contractHref": "/schemas/authors.schema.json",
+      "sectionTypes": [
+        "footer",
+        "authors-list"
+      ]
+    },
+    {
+      "slug": "authors/[authorId]/libri",
+      "title": "Libri per autore",
+      "description": "Catalogo libri filtrato per autore.",
+      "manifestHref": "/mcp-manifests/authors/[authorId]/libri.json",
+      "contractHref": "/schemas/authors/[authorId]/libri.schema.json",
+      "sectionTypes": [
+        "footer",
+        "books-list"
+      ]
+    },
+    {
+      "slug": "contact",
+      "title": "Contact the Inkwell Journal editorial desk",
+      "description": "Write to the Inkwell Journal desk about the essays, the OlonJS collections demo, or anything in between. We answer within two working days.",
+      "manifestHref": "/mcp-manifests/contact.json",
+      "contractHref": "/schemas/contact.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "content-block",
+        "cta-banner"
+      ]
+    },
+    {
+      "slug": "form",
+      "title": "Home",
+      "description": "OlonJS tenant alpha — form smoke test",
+      "manifestHref": "/mcp-manifests/form.json",
+      "contractHref": "/schemas/form.schema.json",
+      "sectionTypes": [
+        "footer",
+        "form-demo"
+      ]
+    },
+    {
+      "slug": "home",
+      "title": "Inkwell Journal — Notes on the craft of software",
+      "description": "An editorial journal about design, engineering and process, built on OlonJS collections: every post and every tag is a first-class entity with its own page.",
+      "manifestHref": "/mcp-manifests/home.json",
+      "contractHref": "/schemas/home.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "hero",
+        "posts-list",
+        "tags-list",
+        "stats-band",
+        "cta-banner"
+      ]
+    },
+    {
+      "slug": "libri",
+      "title": "Libri",
+      "description": "Catalogo libri dimostrativo alimentato da COP collections.",
+      "manifestHref": "/mcp-manifests/libri.json",
+      "contractHref": "/schemas/libri.schema.json",
+      "sectionTypes": [
+        "footer",
+        "books-list"
+      ]
+    },
+    {
+      "slug": "libri/[slug]",
+      "title": "Dettaglio libro",
+      "description": "Pagina dinamica dettaglio libro alimentata dalla collection libri.",
+      "manifestHref": "/mcp-manifests/libri/[slug].json",
+      "contractHref": "/schemas/libri/[slug].schema.json",
+      "sectionTypes": [
+        "footer",
+        "book-detail"
+      ]
+    },
+    {
+      "slug": "post-detail",
+      "title": "Post — Inkwell Journal essay detail",
+      "description": "A single essay from the Inkwell Journal posts collection, with its related topics resolved live from the posts-to-tags relation.",
+      "manifestHref": "/mcp-manifests/post-detail.json",
+      "contractHref": "/schemas/post-detail.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "post-detail",
+        "related-tags",
+        "cta-banner"
+      ]
+    },
+    {
+      "slug": "posts",
+      "title": "All posts — Inkwell Journal essay archive",
+      "description": "The complete archive of Inkwell Journal essays on design, engineering, writing and process, rendered as a timeline from the posts collection.",
+      "manifestHref": "/mcp-manifests/posts.json",
+      "contractHref": "/schemas/posts.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "posts-list",
+        "tags-list",
+        "cta-banner"
+      ]
+    },
+    {
+      "slug": "tag-detail",
+      "title": "Topic — Inkwell Journal posts by tag",
+      "description": "A single topic from the tags collection, with every matching essay computed live by filtering the posts collection on the current tag key.",
+      "manifestHref": "/mcp-manifests/tag-detail.json",
+      "contractHref": "/schemas/tag-detail.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "tag-detail",
+        "tag-posts",
+        "cta-banner"
+      ]
+    },
+    {
+      "slug": "tags",
+      "title": "Topics — browse Inkwell Journal by tag",
+      "description": "Six topics spanning design, engineering, process, writing, tooling and culture. Each tag page computes its own post list from the posts-to-tags relation.",
+      "manifestHref": "/mcp-manifests/tags.json",
+      "contractHref": "/schemas/tags.schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "page-hero",
+        "tags-list",
+        "posts-list",
+        "cta-banner"
+      ]
+    }
+  ]
+}
