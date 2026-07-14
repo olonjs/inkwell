@@ -2,43 +2,43 @@
   "rewrites": [
     {
       "source": "/robots.txt",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/robots.txt"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/robots.txt"
     },
     {
       "source": "/sitemap.xml",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/sitemap.xml"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/sitemap.xml"
     },
     {
       "source": "/llms.txt",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/llms.txt"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/llms.txt"
     },
     {
       "source": "/.well-known/agent-card.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/.well-known/agent-card.json"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/.well-known/agent-card.json"
     },
     {
       "source": "/mcp-manifest.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/mcp-manifest.json"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/mcp-manifest.json"
     },
     {
       "source": "/mcp-manifests/:path*.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/mcp-manifests/:path*.json"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/mcp-manifests/:path*.json"
     },
     {
       "source": "/schemas/:path*.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/schemas/:path*.json"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/schemas/:path*.json"
     },
     {
       "source": "/assets-manifest.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/assets-manifest.json"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/assets-manifest.json"
     },
     {
       "source": "/assets/images/:path*",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/assets/images/:path*"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/assets/images/:path*"
     },
     {
       "source": "/:path*.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell/pages/:path*.json"
+      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/pages/:path*.json"
     },
     {
       "source": "/(.*)",
