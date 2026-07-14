@@ -86,7 +86,10 @@ export function normalizePageRegistry(value: unknown): Record<string, PageConfig
     const canonicalSlug = normalizeRouteSlug(registrySlug);
     const direct = coercePageConfig(canonicalSlug, rawPageValue);
     if (direct) {
-      normalized[canonicalSlug] = { ...direct, slug: canonicalSlug };
+      // Preserve explicit route templates from page payload (e.g. posts/[slug]).
+      // Registry key still comes from the file slug, but route matching relies on page.slug.
+      const routeSlug = normalizeRouteSlug(asString(direct.slug, canonicalSlug));
+      normalized[canonicalSlug] = { ...direct, slug: routeSlug };
       continue;
     }
 
