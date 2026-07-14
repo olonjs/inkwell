@@ -1,59 +1,18 @@
 {
-  "rewrites": [
-    {
-      "source": "/robots.txt",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/robots.txt"
-    },
-    {
-      "source": "/sitemap.xml",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/sitemap.xml"
-    },
-    {
-      "source": "/llms.txt",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/llms.txt"
-    },
-    {
-      "source": "/.well-known/agent-card.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/.well-known/agent-card.json"
-    },
-    {
-      "source": "/mcp-manifest.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/mcp-manifest.json"
-    },
-    {
-      "source": "/mcp-manifests/:path*.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/mcp-manifests/:path*.json"
-    },
-    {
-      "source": "/schemas/:path*.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/schemas/:path*.json"
-    },
-    {
-      "source": "/assets-manifest.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/assets-manifest.json"
-    },
-    {
-      "source": "/assets/images/:path*",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/assets/images/:path*"
-    },
-    {
-      "source": "/:path*.json",
-      "destination": "https://bat5elmxofxdroan.public.blob.vercel-storage.com/tenants/inkwell-json80599/pages/:path*.json"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    "rewrites": [
+
+    { "source": "/:path*.json",              "destination": "{BLOB_BASE}/tenants/{slug}/pages/:path*.json" },
+    { "source": "/(.*)",                     "destination": "/index.html" }
   ],
-  "headers": [
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    }
-  ]
+    "headers":  [
+                    {
+                        "source":  "/assets/(.*)",
+                        "headers":  [
+                                        {
+                                            "key":  "Cache-Control",
+                                            "value":  "public, max-age=31536000, immutable"
+                                        }
+                                    ]
+                    }
+                ]
 }
