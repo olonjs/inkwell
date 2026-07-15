@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import type { JsonPagesConfig } from '@olonjs/core';
-import { applyLegacyCloudPayload, fetchLegacyCloudContentPayload } from '@/lib/cloud/cloudContentClient';
+import { applyLegacyCloudPayload, fetchAdminCloudRenderPayload } from '@/lib/cloud/cloudContentClient';
 import { cloudFingerprint, writeCachedCloudContent } from '@/lib/cloud/cloudCache';
 import { isAdminPath, patchHistoryNavigation } from '@/lib/spp';
 import { APP_BASE_PATH } from '@/lib/tenantEnv';
@@ -27,7 +27,7 @@ export function useAdminStudioContent({
   setSiteConfig,
   setCollections,
 }: UseAdminStudioContentOptions) {
-  const loadedRef = useRef(false);
+  const lastSyncedPathRef = useRef<string | null>(null);
   const inFlightRef = useRef<Promise<void> | null>(null);
 
   useEffect(() => {
@@ -35,14 +35,17 @@ export function useAdminStudioContent({
 
     const syncIfAdmin = () => {
       if (!isAdminPath(window.location.pathname, APP_BASE_PATH)) return;
-      if (loadedRef.current || inFlightRef.current) return;
+      const currentPath = window.location.pathname;
+      if (lastSyncedPathRef.current === currentPath || inFlightRef.current) return;
 
       const controller = new AbortController();
       const fingerprint = cloudFingerprint(apiCandidates[0]!, apiKey);
+      lastSyncedPathRef.current = currentPath;
 
-      inFlightRef.current = fetchLegacyCloudContentPayload(
+      inFlightRef.current = fetchAdminCloudRenderPayload(
         apiCandidates,
         apiKey,
+        currentPath,
         controller.signal,
         MAX_RETRIES,
       )
@@ -57,11 +60,10 @@ export function useAdminStudioContent({
             siteConfig: remoteSite ?? null,
             pages: (remotePages ?? {}) as Record<string, unknown>,
           });
-          loadedRef.current = true;
         })
         .catch((error: unknown) => {
           if (import.meta.env.DEV) {
-            console.warn('[admin-studio] legacy content sync failed', error);
+            console.warn('[admin-studio] render sync failed', error);
           }
         })
         .finally(() => {

@@ -61,7 +61,7 @@ function App() {
     themeConfigSeed,
   });
   useAdminStudioContent({
-    enabled: bootstrap.isHotSaveMode,
+    enabled: bootstrap.isCloudMode,
     apiCandidates: bootstrap.cloudApiCandidates,
     apiKey: CLOUD_API_KEY,
     setPages: bootstrap.setPages,
