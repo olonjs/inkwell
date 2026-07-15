@@ -14,8 +14,6 @@ import {
 
   fetchRenderProjection,
 
-  isAdminPath,
-
   patchHistoryNavigation,
 
   resolveRegistrySlugFromRender,
@@ -220,7 +218,7 @@ export function useTenantBootstrap({
 
 
 
-    if (isSave2RepoMode && !isAdminPath(window.location.pathname, APP_BASE_PATH)) {
+    if (isSave2RepoMode) {
 
       if (contentLoadInFlight.current) return;
 
