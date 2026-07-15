@@ -1,16 +1,16 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-contract",
-  "slug": "tag-detail",
-  "title": "Topic — Inkwell Journal posts by tag",
-  "description": "A single topic from the tags collection, with every matching essay computed live by filtering the posts collection on the current tag key.",
-  "manifestHref": "/mcp-manifests/tag-detail.json",
-  "systemPrompt": "You are operating the \"Topic — Inkwell Journal posts by tag\" page in OlonJS Studio. Use only the declared tools and keep mutations valid against the section schema.",
+  "slug": "posts/tools-that-disappear",
+  "title": "Post — Inkwell Journal essay detail",
+  "description": "A single essay from the Inkwell Journal posts collection, with its related topics resolved live from the posts-to-tags relation.",
+  "manifestHref": "/mcp-manifests/posts/tools-that-disappear.json",
+  "systemPrompt": "You are operating the \"Post — Inkwell Journal essay detail\" page in OlonJS Studio. Use only the declared tools and keep mutations valid against the section schema.",
   "sectionTypes": [
     "header",
     "footer",
-    "tag-detail",
-    "tag-posts",
+    "post-detail",
+    "related-tags",
     "cta-banner"
   ],
   "sectionInstances": [
@@ -27,22 +27,22 @@
       "label": "footer"
     },
     {
-      "id": "tag-detail-head",
-      "type": "tag-detail",
+      "id": "post-detail-body",
+      "type": "post-detail",
       "scope": "local",
-      "label": "tag-detail"
+      "label": "post-detail"
     },
     {
-      "id": "tag-detail-posts",
-      "type": "tag-posts",
+      "id": "post-detail-related-tags",
+      "type": "related-tags",
       "scope": "local",
-      "label": "Posts on this topic"
+      "label": "Filed under"
     },
     {
-      "id": "tag-detail-cta",
+      "id": "post-detail-cta",
       "type": "cta-banner",
       "scope": "local",
-      "label": "Explore another thread"
+      "label": "Keep reading"
     }
   ],
   "sectionSchemas": {
@@ -161,7 +161,7 @@
         "copyright"
       ]
     },
-    "tag-detail": {
+    "post-detail": {
       "type": "object",
       "properties": {
         "id": {
@@ -181,29 +181,64 @@
             "id": {
               "type": "string"
             },
-            "name": {
+            "title": {
               "type": "string",
               "description": "ui:text"
             },
-            "description": {
+            "excerpt": {
               "type": "string",
               "description": "ui:textarea"
             },
-            "accent": {
+            "body": {
               "type": "string",
-              "enum": [
-                "primary",
-                "accent",
-                "muted"
+              "description": "ui:textarea"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "url"
               ],
-              "description": "ui:select"
+              "description": "ui:image-picker"
+            },
+            "date": {
+              "type": "string",
+              "description": "ui:text"
+            },
+            "author": {
+              "type": "string",
+              "description": "ui:text"
+            },
+            "readingTime": {
+              "type": "string",
+              "description": "ui:text"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "ui:list"
             }
           },
           "additionalProperties": false,
           "required": [
             "id",
-            "name",
-            "description"
+            "title",
+            "excerpt",
+            "body",
+            "date",
+            "author",
+            "readingTime",
+            "tags"
           ],
           "description": "ui:collection-ref"
         }
@@ -213,13 +248,17 @@
         "item"
       ]
     },
-    "tag-posts": {
+    "related-tags": {
       "type": "object",
       "properties": {
         "id": {
           "type": "string"
         },
         "anchorId": {
+          "type": "string",
+          "description": "ui:text"
+        },
+        "label": {
           "type": "string",
           "description": "ui:text"
         },
@@ -237,33 +276,68 @@
             "id": {
               "type": "string"
             },
-            "name": {
+            "title": {
               "type": "string",
               "description": "ui:text"
             },
-            "description": {
+            "excerpt": {
               "type": "string",
               "description": "ui:textarea"
             },
-            "accent": {
+            "body": {
               "type": "string",
-              "enum": [
-                "primary",
-                "accent",
-                "muted"
+              "description": "ui:textarea"
+            },
+            "image": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string"
+                },
+                "alt": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "url"
               ],
-              "description": "ui:select"
+              "description": "ui:image-picker"
+            },
+            "date": {
+              "type": "string",
+              "description": "ui:text"
+            },
+            "author": {
+              "type": "string",
+              "description": "ui:text"
+            },
+            "readingTime": {
+              "type": "string",
+              "description": "ui:text"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "ui:list"
             }
           },
           "additionalProperties": false,
           "required": [
             "id",
-            "name",
-            "description"
+            "title",
+            "excerpt",
+            "body",
+            "date",
+            "author",
+            "readingTime",
+            "tags"
           ],
           "description": "ui:collection-ref"
         },
-        "posts": {
+        "tags": {
           "type": "object",
           "additionalProperties": {
             "type": "object",
@@ -271,64 +345,29 @@
               "id": {
                 "type": "string"
               },
-              "title": {
+              "name": {
                 "type": "string",
                 "description": "ui:text"
               },
-              "excerpt": {
+              "description": {
                 "type": "string",
                 "description": "ui:textarea"
               },
-              "body": {
+              "accent": {
                 "type": "string",
-                "description": "ui:textarea"
-              },
-              "image": {
-                "type": "object",
-                "properties": {
-                  "url": {
-                    "type": "string"
-                  },
-                  "alt": {
-                    "type": "string"
-                  }
-                },
-                "additionalProperties": false,
-                "required": [
-                  "url"
+                "enum": [
+                  "primary",
+                  "accent",
+                  "muted"
                 ],
-                "description": "ui:image-picker"
-              },
-              "date": {
-                "type": "string",
-                "description": "ui:text"
-              },
-              "author": {
-                "type": "string",
-                "description": "ui:text"
-              },
-              "readingTime": {
-                "type": "string",
-                "description": "ui:text"
-              },
-              "tags": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                },
-                "description": "ui:list"
+                "description": "ui:select"
               }
             },
             "additionalProperties": false,
             "required": [
               "id",
-              "title",
-              "excerpt",
-              "body",
-              "date",
-              "author",
-              "readingTime",
-              "tags"
+              "name",
+              "description"
             ]
           },
           "description": "ui:collection-ref"
@@ -337,7 +376,7 @@
       "additionalProperties": false,
       "required": [
         "item",
-        "posts"
+        "tags"
       ]
     },
     "cta-banner": {

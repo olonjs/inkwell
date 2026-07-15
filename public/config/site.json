@@ -5,7 +5,7 @@
     "data": {
       "logoText": "Inkwell",
       "logoHighlight": "journal",
-      "announcement": "Collections demo: posts and tags, linked both ways",
+      "announcement": "",
       "menu": {
         "$ref": "../config/menu.json#/main"
       }

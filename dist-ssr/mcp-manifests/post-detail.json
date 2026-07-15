@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-mcp-manifest",
-  "generatedAt": "2026-07-13T13:47:31.895Z",
+  "generatedAt": "2026-07-13T15:47:59.452Z",
   "slug": "post-detail",
   "title": "Post — Inkwell Journal essay detail",
   "description": "A single essay from the Inkwell Journal posts collection, with its related topics resolved live from the posts-to-tags relation.",

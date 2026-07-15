@@ -1,6 +1,6 @@
 {
   "id": "tag-detail-page",
-  "slug": "tag-detail",
+  "slug": "tags/process",
   "collection": {
     "source": "tags",
     "paramKey": "slug"
@@ -16,7 +16,10 @@
       "data": {
         "backLabel": "All topics",
         "item": {
-          "$ref": "collection:current"
+          "id": "process",
+          "name": "Process",
+          "description": "How work actually gets shipped — constraints, drafts, deploys and the rituals that keep teams honest.",
+          "accent": "primary"
         }
       },
       "settings": {
@@ -30,7 +33,10 @@
         "title": "Posts on this topic",
         "emptyLabel": "No posts carry this tag yet.",
         "item": {
-          "$ref": "collection:current"
+          "id": "process",
+          "name": "Process",
+          "description": "How work actually gets shipped — constraints, drafts, deploys and the rituals that keep teams honest.",
+          "accent": "primary"
         },
         "posts": {
           "designing-with-constraints": {

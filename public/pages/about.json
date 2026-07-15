@@ -11,7 +11,7 @@
       "type": "page-hero",
       "data": {
         "label": "About",
-        "title": "A journal that is also a diagram",
+        "title": "Ayy journal that is also a diagram",
         "description": "Inkwell exists to show one architectural idea clearly: entities as collections, relations as keys, and rendering as resolution."
       },
       "settings": {

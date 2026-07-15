@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-page-mcp-manifest",
-  "generatedAt": "2026-07-13T15:47:59.444Z",
+  "generatedAt": "2026-07-15T12:42:25.181Z",
   "slug": "home",
   "title": "Inkwell Journal — Notes on the craft of software",
   "description": "An editorial journal about design, engineering and process, built on OlonJS collections: every post and every tag is a first-class entity with its own page.",

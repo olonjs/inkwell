@@ -6,13 +6,13 @@
   <!-- ========================================== -->
   <url>
     <loc>http://localhost:5173/llms.txt</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:5173/mcp-manifest.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -36,7 +36,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/about.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -60,7 +60,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/authors/[authorId]/libri.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -84,7 +84,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/authors.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -108,7 +108,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/contact.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -132,7 +132,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/form.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -156,7 +156,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/home.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -180,7 +180,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/libri/[slug].schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -204,7 +204,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/libri.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -228,7 +228,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/post-detail.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -252,7 +252,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/posts.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -276,7 +276,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/tag-detail.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -300,7 +300,7 @@
   <!-- Machine Contract (Schema) -->
   <url>
     <loc>http://localhost:5173/schemas/tags.schema.json</loc>
-    <lastmod>2026-07-13T13:47:32Z</lastmod>
+    <lastmod>2026-07-13T15:47:59Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

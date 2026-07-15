@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "kind": "olonjs-mcp-manifest-index",
-  "generatedAt": "2026-07-13T15:47:59.461Z",
+  "generatedAt": "2026-07-15T12:42:25.216Z",
   "pages": [
     {
       "slug": "about",
@@ -104,20 +104,6 @@
       ]
     },
     {
-      "slug": "post-detail",
-      "title": "Post — Inkwell Journal essay detail",
-      "description": "A single essay from the Inkwell Journal posts collection, with its related topics resolved live from the posts-to-tags relation.",
-      "manifestHref": "/mcp-manifests/post-detail.json",
-      "contractHref": "/schemas/post-detail.schema.json",
-      "sectionTypes": [
-        "header",
-        "footer",
-        "post-detail",
-        "related-tags",
-        "cta-banner"
-      ]
-    },
-    {
       "slug": "posts",
       "title": "All posts — Inkwell Journal essay archive",
       "description": "The complete archive of Inkwell Journal essays on design, engineering, writing and process, rendered as a timeline from the posts collection.",
@@ -133,16 +119,16 @@
       ]
     },
     {
-      "slug": "tag-detail",
-      "title": "Topic — Inkwell Journal posts by tag",
-      "description": "A single topic from the tags collection, with every matching essay computed live by filtering the posts collection on the current tag key.",
-      "manifestHref": "/mcp-manifests/tag-detail.json",
-      "contractHref": "/schemas/tag-detail.schema.json",
+      "slug": "posts/[slug]",
+      "title": "Post — Inkwell Journal essay detail",
+      "description": "A single essay from the Inkwell Journal posts collection, with its related topics resolved live from the posts-to-tags relation.",
+      "manifestHref": "/mcp-manifests/posts/[slug].json",
+      "contractHref": "/schemas/posts/[slug].schema.json",
       "sectionTypes": [
         "header",
         "footer",
-        "tag-detail",
-        "tag-posts",
+        "post-detail",
+        "related-tags",
         "cta-banner"
       ]
     },
@@ -158,6 +144,20 @@
         "page-hero",
         "tags-list",
         "posts-list",
+        "cta-banner"
+      ]
+    },
+    {
+      "slug": "tags/[slug]",
+      "title": "Topic — Inkwell Journal posts by tag",
+      "description": "A single topic from the tags collection, with every matching essay computed live by filtering the posts collection on the current tag key.",
+      "manifestHref": "/mcp-manifests/tags/[slug].json",
+      "contractHref": "/schemas/tags/[slug].schema.json",
+      "sectionTypes": [
+        "header",
+        "footer",
+        "tag-detail",
+        "tag-posts",
         "cta-banner"
       ]
     }
