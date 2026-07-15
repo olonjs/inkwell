@@ -11,6 +11,7 @@ export {
   isAdminPath,
   normalizeRenderPath,
   patchHistoryNavigation,
+  resolveRenderPathFromLocation,
   resolveRegistrySlugFromRender,
 } from './renderClient';
 export { useCollectionSlice } from './useCollectionSlice';

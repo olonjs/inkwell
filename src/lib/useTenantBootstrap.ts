@@ -16,11 +16,11 @@ import {
 
   isAdminPath,
 
-  normalizeRenderPath,
-
   patchHistoryNavigation,
 
   resolveRegistrySlugFromRender,
+
+  resolveRenderPathFromLocation,
 
   type RenderProjectionResponse,
 
@@ -116,7 +116,7 @@ export function useTenantBootstrap({
 
   const isHotSaveMode = isCloudMode && !isSave2RepoMode;
 
-  const useRenderBootstrap = isHotSaveMode;
+  const useRenderBootstrap = isHotSaveMode || isSave2RepoMode;
 
 
 
@@ -220,7 +220,7 @@ export function useTenantBootstrap({
 
 
 
-    if (isSave2RepoMode) {
+    if (isSave2RepoMode && !isAdminPath(window.location.pathname, APP_BASE_PATH)) {
 
       if (contentLoadInFlight.current) return;
 
@@ -316,22 +316,6 @@ export function useTenantBootstrap({
 
 
 
-    if (isAdminPath(window.location.pathname, APP_BASE_PATH)) {
-
-      setContentMode('cloud');
-
-      setContentFallback(null);
-
-      setShowTopProgress(false);
-
-      setHasInitialCloudResolved(true);
-
-      return;
-
-    }
-
-
-
     const controller = new AbortController();
 
     const startedAt = Date.now();
@@ -402,11 +386,7 @@ export function useTenantBootstrap({
 
       if (controller.signal.aborted) return;
 
-      if (isAdminPath(pathname, APP_BASE_PATH)) return;
-
-
-
-      const renderPath = normalizeRenderPath(pathname, APP_BASE_PATH);
+      const renderPath = resolveRenderPathFromLocation(pathname, APP_BASE_PATH);
 
       const inFlightKey = renderPath;
 

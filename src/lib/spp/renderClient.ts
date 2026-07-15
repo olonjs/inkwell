@@ -36,6 +36,13 @@ export function isAdminPath(pathname: string, basePath: string): boolean {
   return path === '/admin' || path.startsWith('/admin/');
 }
 
+export function resolveRenderPathFromLocation(pathname: string, basePath: string): string {
+  const path = normalizeRenderPath(pathname, basePath);
+  if (path === '/admin') return '/';
+  if (path.startsWith('/admin/')) return path.slice('/admin'.length) || '/';
+  return path;
+}
+
 export function resolveRegistrySlugFromRender(page: PageConfig): string {
   const slug = typeof page.slug === 'string' ? page.slug.trim() : '';
   if (slug.includes('[')) return slug;
