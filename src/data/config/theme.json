@@ -53,9 +53,9 @@
     },
     "typography": {
       "fontFamily": {
-        "primary": "'Instrument Sans', system-ui, sans-serif",
+        "primary": "'Instrument Sans', Arial, Helvetica, sans-serif",
         "mono": "'JetBrains Mono', monospace",
-        "display": "'Bricolage Grotesque', system-ui, sans-serif"
+        "display": "'Instrument Serif', Times, 'Times New Roman', serif"
       },
       "wordmark": {
         "fontFamily": "'Bricolage Grotesque', system-ui, sans-serif",

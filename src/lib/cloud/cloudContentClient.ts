@@ -71,6 +71,7 @@ export async function fetchAdminCloudRenderPayload(
   return {
     ok: true,
     siteConfig: projection.context?.siteConfig,
+    menuConfig: projection.context?.menuConfig,
     pages: { [pageSlug]: projection.page },
     pagesIndex: projection.pagesIndex,
     contentStatus: 'ok',

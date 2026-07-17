@@ -5,7 +5,7 @@ import { applyLegacyCloudPayload, fetchAdminCloudRenderPayload } from '@/lib/clo
 import { cloudFingerprint, writeCachedCloudContent } from '@/lib/cloud/cloudCache';
 import { isAdminPath, patchHistoryNavigation } from '@/lib/spp';
 import { APP_BASE_PATH } from '@/lib/tenantEnv';
-import type { PageConfig, SiteConfig } from '@/types';
+import type { MenuConfig, PageConfig, SiteConfig } from '@/types';
 
 const MAX_RETRIES = 2;
 
@@ -15,16 +15,18 @@ type UseAdminStudioContentOptions = {
   apiKey: string;
   setPages: Dispatch<SetStateAction<Record<string, PageConfig>>>;
   setSiteConfig: Dispatch<SetStateAction<SiteConfig>>;
+  setMenuConfig?: Dispatch<SetStateAction<MenuConfig>>;
   setCollections: Dispatch<SetStateAction<NonNullable<JsonPagesConfig['collections']>>>;
 };
 
-/** Studio `/admin` sync via legacy `/content` — never mixed into visitor `/render` bootstrap. */
+/** Studio `/admin` sync via SPP `/render` — never mixed into visitor bootstrap. */
 export function useAdminStudioContent({
   enabled,
   apiCandidates,
   apiKey,
   setPages,
   setSiteConfig,
+  setMenuConfig,
   setCollections,
 }: UseAdminStudioContentOptions) {
   const lastSyncedPathRef = useRef<string | null>(null);
@@ -54,6 +56,9 @@ export function useAdminStudioContent({
             setPages,
             setSiteConfig,
           });
+          if (payload.menuConfig && setMenuConfig) {
+            setMenuConfig(payload.menuConfig as MenuConfig);
+          }
           writeCachedCloudContent({
             keyFingerprint: fingerprint,
             savedAt: Date.now(),
@@ -65,6 +70,7 @@ export function useAdminStudioContent({
           if (import.meta.env.DEV) {
             console.warn('[admin-studio] render sync failed', error);
           }
+          lastSyncedPathRef.current = null;
         })
         .finally(() => {
           inFlightRef.current = null;
@@ -77,5 +83,5 @@ export function useAdminStudioContent({
       unpatch();
       inFlightRef.current = null;
     };
-  }, [enabled, apiCandidates, apiKey, setPages, setSiteConfig, setCollections]);
+  }, [enabled, apiCandidates, apiKey, setPages, setSiteConfig, setMenuConfig, setCollections]);
 }

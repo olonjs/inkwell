@@ -19,7 +19,7 @@ export const Footer: React.FC<{ data: FooterData; settings: FooterSettings }> = 
       <div className="max-w-[1200px] mx-auto px-8">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <span className="font-display text-2xl font-black tracking-tight text-[var(--local-text)]" data-jp-field="brandText">
+            <span className="font-wordmark text-2xl tracking-tight text-[var(--local-text)]" data-jp-field="brandText">
               {data.brandText}
             </span>
             {data.tagline && (

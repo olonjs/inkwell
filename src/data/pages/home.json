@@ -7,36 +7,6 @@
   },
   "sections": [
     {
-      "id": "home-hero",
-      "type": "hero",
-      "data": {
-        "label": "An OlonJS collections demo",
-        "title": "Notes on the",
-        "titleHighlight": "craft of software",
-        "subtitle": "Essays on design, engineering and process — published as a living demo of cross-collection relations: every post belongs to many tags, and every tag knows its posts without storing them twice.",
-        "primaryCta": {
-          "id": "home-hero-cta-1",
-          "label": "Read the posts",
-          "href": "/posts",
-          "variant": "primary"
-        },
-        "secondaryCta": {
-          "id": "home-hero-cta-2",
-          "label": "Browse topics",
-          "href": "/tags",
-          "variant": "secondary"
-        },
-        "image": {
-          "url": "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=2000&q=80",
-          "alt": "Fountain pen nib in sharp close-up over paper"
-        }
-      },
-      "settings": {
-        "paddingTop": "xl",
-        "paddingBottom": "none"
-      }
-    },
-    {
       "id": "home-featured-posts",
       "type": "posts-list",
       "data": {

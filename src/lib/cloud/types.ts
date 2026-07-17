@@ -7,6 +7,7 @@ export type ContentStatus = 'ok' | 'empty_namespace' | 'legacy_fallback';
 export type ContentResponse = {
   ok?: boolean;
   siteConfig?: unknown;
+  menuConfig?: unknown;
   pages?: unknown;
   pagesIndex?: string[];
   items?: unknown;

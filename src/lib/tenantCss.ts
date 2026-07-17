@@ -7,10 +7,18 @@ export function buildThemeFontVarsCss(input: unknown): string {
   const tokens = isObjectRecord(input.tokens) ? input.tokens : null;
   const typography = tokens && isObjectRecord(tokens.typography) ? tokens.typography : null;
   const fontFamily = typography && isObjectRecord(typography.fontFamily) ? typography.fontFamily : null;
-  const primary = typeof fontFamily?.primary === 'string' ? fontFamily.primary : "'Instrument Sans', system-ui, sans-serif";
-  const serif = typeof fontFamily?.serif === 'string' ? fontFamily.serif : "'Instrument Serif', Georgia, serif";
+  const primary =
+    typeof fontFamily?.primary === 'string'
+      ? fontFamily.primary
+      : "'Instrument Sans', Arial, Helvetica, sans-serif";
+  const display =
+    typeof fontFamily?.display === 'string'
+      ? fontFamily.display
+      : typeof fontFamily?.serif === 'string'
+        ? fontFamily.serif
+        : "'Instrument Serif', Times, 'Times New Roman', serif";
   const mono = typeof fontFamily?.mono === 'string' ? fontFamily.mono : "'JetBrains Mono', monospace";
-  return `:root{--theme-font-primary:${primary};--theme-font-serif:${serif};--theme-font-mono:${mono};}`;
+  return `:root{--theme-font-primary:${primary};--theme-font-display:${display};--theme-font-mono:${mono};}`;
 }
 
 const REMOTE_CSS_LINK_ATTR = 'data-jp-tenant-remote-css';
@@ -23,8 +31,9 @@ function isRemoteStylesheetHref(value: string): boolean {
 export function extractLeadingRemoteCssImports(cssText: string): { hrefs: string[]; rest: string } {
   const hrefs = new Set<string>();
   const leadingTriviaPattern = /^(?:\s+|\/\*[\s\S]*?\*\/)*/;
+  // Vite/Tailwind may emit `@import url("...")` or compacted `@import"https://..."`.
   const importPattern =
-    /^@import\s+url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)\s*([^;]*);/i;
+    /^@import(?:\s*url\(\s*(?:'([^']+)'|"([^"]+)"|([^'")\s][^)]*))\s*\)|\s*(['"])([^'"]+)\4)\s*([^;]*);/i;
   let rest = cssText;
 
   for (;;) {
@@ -36,8 +45,8 @@ export function extractLeadingRemoteCssImports(cssText: string): { hrefs: string
     const match = rest.match(importPattern);
     if (!match) break;
 
-    const href = (match[1] ?? match[2] ?? match[3] ?? '').trim();
-    const trailingDirectives = (match[4] ?? '').trim();
+    const href = (match[1] ?? match[2] ?? match[3] ?? match[5] ?? '').trim();
+    const trailingDirectives = (match[6] ?? '').trim();
 
     if (!isRemoteStylesheetHref(href) || trailingDirectives.length > 0) {
       break;

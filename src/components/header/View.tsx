@@ -40,7 +40,7 @@ export const Header: React.FC<{ data: HeaderData; settings: HeaderSettings }> = 
         )}
         <div className="flex h-20 items-center justify-between gap-6">
           <a href="/" className="flex items-baseline gap-2">
-            <span className="font-display text-2xl font-black tracking-tight text-[var(--local-text)]" data-jp-field="logoText">
+            <span className="font-wordmark text-2xl tracking-tight text-[var(--local-text)]" data-jp-field="logoText">
               {data.logoText}
             </span>
             {data.logoHighlight && (
@@ -100,7 +100,7 @@ export const Header: React.FC<{ data: HeaderData; settings: HeaderSettings }> = 
               </SheetTrigger>
               <SheetContent className="flex flex-col gap-0 bg-card text-foreground">
                 <SheetHeader className="border-b border-border px-6 py-5">
-                  <SheetTitle className="font-display text-lg text-foreground">{data.logoText || 'Menu'}</SheetTitle>
+                  <SheetTitle className="font-wordmark text-lg text-foreground">{data.logoText || 'Menu'}</SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-1 flex-col divide-y divide-border overflow-y-auto">
                   {/* Mobile duplicate of navItems: intentionally NOT carrying

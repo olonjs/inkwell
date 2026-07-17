@@ -4,7 +4,7 @@
     "type": "header",
     "data": {
       "logoText": "Inkwell",
-      "logoHighlight": "journal",
+      "logoHighlight": "",
       "announcement": "",
       "menu": {
         "$ref": "../config/menu.json#/main"
